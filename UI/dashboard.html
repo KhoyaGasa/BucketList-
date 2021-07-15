@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: 75%;
+            background-repeat: no-repeat;
+            background-position-x:center;
+        }
+        .loginDetails {
+            border: cornsilk;
+            border-radius: 10px;
+            padding-left: 50%;
+            padding-top: 9%;
+        }
+        th:tr{
+        color: blue;
+  
+    }
+    tr:nth-of-type(2n){
+        border: 1px solid black;
+        background-color: rgba(150, 150, 150, 0.5);
+  
+    }
+  
+    td{
+        padding: 8px 8px;
+        border: 1px solid black;
+    }
+        
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1 style="color:navy; padding-left: 30%; padding-top: 5%;">Your Bucket List</h1>
+    </div>
+    <div><h2>{{ dataToRender }}</h2></div>
+
+    <div class="filters" id="taskFilters">
+        
+        <li><a href="#">Ongoing Tasks</a></li>|
+        <li><a href="#">Finished Tasks</a></li>|
+        <li><a href="#">Pending Tasks</a></li>|
+        <li><a href ="#">Deleted Tasks</a></li>|
+    </div>
+   <a href={{ url_for ('newTask') }}><input type="submit" value="Add New Task"></a>
+    <div class="taskData">
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Task Name</th>
+                <th>Task Reference</th>
+                <th> Task Descritption</th>
+                <th>Duration(days)</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>mugasa</td>
+                <td>001</td>
+                <td>Python scripting</td>
+                <td><p>Work on the different script code</p></td>
+                <td>30 </td>
+                <td>Done</td>
+                <td><input type="submit" value="Modify">|<a href={{ url_for('deleteTask') }}> <input type="submit" value="Delete Task"></a></td>
+                
+            </tr>
+            <!-- For loop to run through the tasks of the user -->
+            {% for j in tasksToRender %}
+                
+            <!--Table rows-->
+            <tr>
+                <td>{{ j[0] }}</td>
+                <td>{{j[1]}}</td>
+                <td>{{j[2]}}</td>
+                <td>{{j[3]}}</td>
+                <td>{{j[4]}}</td>
+                <td>{{j[5]}}</td>
+                <td><input type="submit" value="Modify">|<a href={{ url_for('deleteTask') }}> <input type="submit" value="Delete Task"></a></td>
+                
+
+            </tr>
+                
+            {%endfor%}
+
+
+        </table>
+
+    </div>
+    
+    
+    
+</body>
+</html>

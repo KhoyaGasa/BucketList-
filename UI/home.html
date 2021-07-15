@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: 75%;
+            background-repeat: no-repeat;
+            background-position-x:center;
+        }
+        .loginDetails {
+            border: cornsilk;
+            border-radius: 10px;
+            padding-left: 50%;
+            padding-top: 9%;
+        }
+        .registration {
+            padding-left: 50%;
+            padding-top: 9%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1 style="color:navy; padding-left: 30%; padding-top: 5%;">Welcome to My Bucket List</h1>
+    </div>
+    <div class="loginDetails" id="loginBox">
+        <form action="/home" method="POST">
+       <li><p>Username:</p></li> 
+       <input type="text" id="user_name" name="user_name">
+       <li><p>Password:</p></li>
+       <input type="password" id="pwd" name="pwd">
+       <input type="submit" value="Login" id="login">
+       <p><a href="#">Forgot password</a></p>
+       
+    </form>
+    </div>
+    <div class="registration"><P>Have no account? <a href={{ url_for ('newUser') }}><input type="submit" value="Register"></a></P>
+    </div>
+    
+    
+</body>
+</html>

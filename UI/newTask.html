@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: 75%;
+            background-repeat: no-repeat;
+            background-position-x:center;
+        }
+        .loginDetails {
+            border: cornsilk;
+            border-radius: 10px;
+            padding-left: 50%;
+            padding-top: 9%;
+        }
+        .newTask {
+            padding-left: 50%;
+            padding-top: 9%;
+            border: slateblue;
+            background-color: thistle;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1 style="color:navy; padding-left: 30%; padding-top: 5%;">Welcome to My Bucket List</h1>
+    </div>
+    <div class="newTask" id="loginBox">
+        <label for="newTask">Add a new task to your bucket list</label>
+        <form ation="/newtask" method="POST">
+       <li><p>Task Name:</p></li> 
+       <input type="text" id="user_name" name="task_name">
+
+       <li><p>Task Ref</p></li> 
+       <input type="text" id="taskRef" name="taskRef">
+
+       <li><p>Description</p></li> 
+       <input type="text" id="user_name" name="descriptions">
+
+       <li><p>Duration:</p></li>
+       <input type="text" id="eta" name="eta">
+
+       <li><p>Status</p></li>
+       <select name="taskStatus" id="taskStatus">
+           <option value="Ongoing">Ongoing</option>
+           <option value="Pending">Pending</option>
+           <option value="Done">Done</option>
+       </select>
+      
+       <input type="submit" value="Submit" id="addTask">
+       
+       
+    </form>
+    
+    
+</body>
+</html>
